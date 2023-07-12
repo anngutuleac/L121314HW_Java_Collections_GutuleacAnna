@@ -11,8 +11,8 @@ interface UserManagerType {
 }
 
 class UserManager implements UserManagerType {
-    private UserStorage storage = new UserStorage();
-    private UserSessionStorage sessionStorage = new UserSessionStorage();
+    private UnitStorage storage = new UnitStorage();
+    private UnitStorage sessionStorage = new UnitStorage();
 
     public void authorize(User user) {
         if (storage.contains(user)) {
@@ -65,7 +65,9 @@ class UserManager implements UserManagerType {
     }
 
     public User[] authorizedUsers() {
-        return sessionStorage.users();
+        User[] arr = new User[sessionStorage.getUnits().size()];
+        arr = sessionStorage.getUnits().toArray(arr);
+        return arr;
     }
 
     public boolean isAuthorized(User user) {

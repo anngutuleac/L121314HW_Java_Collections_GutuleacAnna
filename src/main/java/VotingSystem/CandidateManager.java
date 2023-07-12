@@ -7,7 +7,7 @@ interface CandidateManagerType {
 }
 
 class CandidateManager implements CandidateManagerType {
-    private CandidateStorage storage = new CandidateStorage();
+    private UnitStorage storage = new UnitStorage();
 
     public void add(Candidate candidate) {
         if (storage.contains(candidate)) {
@@ -28,6 +28,8 @@ class CandidateManager implements CandidateManagerType {
     }
 
     public Candidate[] candidates() {
-        return storage.candidates();
+        Candidate[] arr = new Candidate[storage.getUnits().size()];
+        arr = storage.getUnits().toArray(arr);
+        return arr;
     }
 }

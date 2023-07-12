@@ -5,9 +5,11 @@ interface UnitStorageType {
     void add(UnitType unit);
     boolean contains(UnitType unit);
     void remove(UnitType unit);
+    ArrayList<UnitType> getUnits();
+    boolean containsByName(UnitType unit);
 }
 
-abstract class UnitStorage implements UnitStorageType {
+class UnitStorage implements UnitStorageType {
     private ArrayList<UnitType> units = new ArrayList<>();
 
     public void add(UnitType unit) {
@@ -24,5 +26,12 @@ abstract class UnitStorage implements UnitStorageType {
 
     public ArrayList<UnitType> getUnits() {
         return units;
+    }
+
+    public boolean containsByName(UnitType unit) {
+        for (UnitType u: units) {
+            if (u.getName() == unit.getName()) { return true; }
+        }
+        return false;
     }
 }
