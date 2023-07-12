@@ -7,7 +7,12 @@ interface CandidateManagerType {
 }
 
 class CandidateManager implements CandidateManagerType {
-    private UnitStorage storage = new UnitStorage();
+    private UnitStorageType storage;
+
+    CandidateManager(UnitStorageType storage) throws IllegalArgumentException {
+        if (storage == null) { throw new IllegalArgumentException("Передан нулевой параметр при инициализации!"); }
+        this.storage = storage;
+    }
 
     public void add(Candidate candidate) {
         if (storage.contains(candidate)) {

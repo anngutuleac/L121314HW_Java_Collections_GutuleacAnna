@@ -10,7 +10,12 @@ interface UnitStorageType {
 }
 
 class UnitStorage implements UnitStorageType {
-    private ArrayList<UnitType> units = new ArrayList<>();
+    private ArrayList<UnitType> units;
+
+    UnitStorage(ArrayList<UnitType> units) throws IllegalArgumentException {
+        if (units == null) { throw new IllegalArgumentException("Передан нулевой параметр при инициализации!"); }
+        this.units = units;
+    }
 
     public void add(UnitType unit) {
         units.add(unit);

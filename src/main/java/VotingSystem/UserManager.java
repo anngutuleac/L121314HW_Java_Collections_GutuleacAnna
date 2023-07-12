@@ -11,8 +11,14 @@ interface UserManagerType {
 }
 
 class UserManager implements UserManagerType {
-    private UnitStorage storage = new UnitStorage();
-    private UnitStorage sessionStorage = new UnitStorage();
+    private UnitStorageType storage;
+    private UnitStorageType sessionStorage;
+
+    UserManager(UnitStorageType storage, UnitStorageType sessionStorage) throws IllegalArgumentException {
+        if (storage == null || sessionStorage == null) { throw new IllegalArgumentException("Передан нулевой параметр при инициализации!"); }
+        this.storage = storage;
+        this.sessionStorage = sessionStorage;
+    }
 
     public void authorize(User user) {
         if (storage.contains(user)) {

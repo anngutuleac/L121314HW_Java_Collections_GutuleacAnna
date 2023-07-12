@@ -14,8 +14,14 @@ interface VotingSystemType {
 }
 
 class VotingSystem implements VotingSystemType {
-    private UserManagerType userManager = new UserManager();
-    private CandidateManagerType candidatesManager = new CandidateManager();
+    private UserManagerType userManager;
+    private CandidateManagerType candidatesManager;
+
+    VotingSystem(UserManagerType userManager, CandidateManagerType candidatesManager) throws IllegalArgumentException {
+        if (userManager == null || candidatesManager == null) { throw new IllegalArgumentException("Передан нулевой параметр при инициализации!"); }
+        this.userManager = userManager;
+        this.candidatesManager = candidatesManager;
+    }
 
     public void add(Candidate candidate) {
         candidatesManager.add(candidate);
