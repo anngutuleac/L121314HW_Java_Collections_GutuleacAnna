@@ -1,6 +1,6 @@
 package VotingSystem;
 
-class User {
+class User implements UnitType {
     private String username;
     private String password;
     private Candidate selectedCandidate = null;
@@ -27,7 +27,7 @@ class User {
         return selectedCandidate != null;
     }
 
-    String info() {
+    public String description() {
         if (selectedCandidate != null) {
             return username + " (Выбраный кандидат: " + selectedCandidate.getName() + ")";
         } else {

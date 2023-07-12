@@ -1,6 +1,13 @@
 package VotingSystem;
 import java.util.ArrayList;
 
+interface CandidateStorageType {
+    void add(Candidate candidate);
+    boolean contains(Candidate candidate);
+    void remove(Candidate candidate);
+    Candidate[] candidates();
+}
+
 class CandidateStorage implements CandidateStorageType {
     private ArrayList<Candidate> candidates = new ArrayList<Candidate>();
 

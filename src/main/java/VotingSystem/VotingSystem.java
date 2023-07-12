@@ -1,34 +1,47 @@
 package VotingSystem;
 
-class VotingSystem {
+interface VotingSystemType {
+    void add(Candidate candidate);
+    void remove(Candidate candidate);
+    void authorize(User user);
+    void register(User user);
+    void logOut(User user);
+    void delete(User user);
+    void vote(User user, Candidate candidate);
+    void printCandidates();
+    void printAuthorizedUsers();
+    void printHighestVotedCandidate();
+}
+
+class VotingSystem implements VotingSystemType {
     private UserManagerType userManager = new UserManager();
     private CandidateManagerType candidatesManager = new CandidateManager();
 
-    void add(Candidate candidate) {
+    public void add(Candidate candidate) {
         candidatesManager.add(candidate);
     }
 
-    void remove(Candidate candidate) {
+    public void remove(Candidate candidate) {
         candidatesManager.remove(candidate);
     }
 
-    void authorize(User user) {
+    public void authorize(User user) {
         userManager.authorize(user);
     }
 
-    void register(User user) {
+    public void register(User user) {
         userManager.register(user);
     }
 
-    void logOut(User user) {
+    public void logOut(User user) {
         userManager.logOut(user);
     }
 
-    void delete(User user) {
+    public void delete(User user) {
         userManager.delete(user);
     }
 
-    void vote(User user, Candidate candidate) {
+    public void vote(User user, Candidate candidate) {
         if (userManager.isAuthorized(user)) {
             userManager.vote(user, candidate);
         } else {
@@ -36,21 +49,15 @@ class VotingSystem {
         }
     }
 
-    void printCandidates() {
-        for (int i = 0; i < candidatesManager.candidates().length; i++) {
-            Candidate candidate = candidatesManager.candidates()[i];
-            System.out.println((i + 1) + ". " + candidate.info());
-        }
+    public void printCandidates() {
+        print(candidatesManager.candidates());
     }
 
-    void printAuthorizedUsers() {
-        for (int i = 0; i < userManager.authorizedUsers().length; i++) {
-            User user = userManager.authorizedUsers()[i];
-            System.out.println((i + 1) + ". " + user.info());
-        }
+    public void printAuthorizedUsers() {
+        print(userManager.authorizedUsers());
     }
 
-    void printHighestVotedCandidate() {
+    public void printHighestVotedCandidate() {
         int defaultVoteNumber = 0;
         int maxVoteNumber = defaultVoteNumber;
         int maxVotedCandidateIndex = 0;
@@ -63,6 +70,13 @@ class VotingSystem {
         }
         if (maxVoteNumber == defaultVoteNumber) { return; }
         Candidate candidate = candidatesManager.candidates()[maxVotedCandidateIndex];
-        System.out.println("Кандидат с наибольшим количеством голосов: " + candidate.info());
+        System.out.println("Кандидат с наибольшим количеством голосов: " + candidate.description());
+    }
+
+    private void print(UnitType[] unitTypes) {
+        for (int i = 0; i < unitTypes.length; i++) {
+            UnitType unitType = unitTypes[i];
+            System.out.println((i + 1) + ". " + unitType.description());
+        }
     }
 }

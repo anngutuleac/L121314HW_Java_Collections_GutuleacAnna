@@ -4,7 +4,7 @@ enum Party {
     PCRM, PLDM, PCUS, PDM
 }
 
-class Candidate {
+class Candidate implements UnitType {
     private long id;
     private String name;
     private Party party;
@@ -27,7 +27,7 @@ class Candidate {
         return voteNumber;
     }
 
-    String info() {
+    public String description() {
         return name + " - " + party + " (Количество голосов: " + voteNumber + ")";
     }
 

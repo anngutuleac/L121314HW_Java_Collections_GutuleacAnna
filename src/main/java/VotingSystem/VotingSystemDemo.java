@@ -4,7 +4,7 @@ import java.util.Collections;
 
 public class VotingSystemDemo {
     public static void main(String args[]) {
-        VotingSystem votingSystem = new VotingSystem();
+        VotingSystemType votingSystem = new VotingSystem();
 
         // Создаем кандидатов
         Candidate candidate1 = new Candidate(10001, "Игорь Додон", Party.PCRM);
