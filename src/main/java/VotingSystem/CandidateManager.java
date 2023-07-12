@@ -1,9 +1,15 @@
 package VotingSystem;
 
-class CandidateManager {
+interface CandidateManagerType {
+    void add(Candidate candidate);
+    void remove(Candidate candidate);
+    Candidate[] candidates();
+}
+
+class CandidateManager implements CandidateManagerType {
     private CandidateStorageType storage = new CandidateStorage();
 
-    void add(Candidate candidate) {
+    public void add(Candidate candidate) {
         if (storage.contains(candidate)) {
             System.out.println("Такой кандидат уже существует");
             return;
@@ -12,7 +18,7 @@ class CandidateManager {
         System.out.println("Кандидат " + candidate.getName() + " успешно добавлен");
     }
 
-    void remove(Candidate candidate) {
+    public void remove(Candidate candidate) {
         if (!storage.contains(candidate)) {
             System.out.println("Кандидат " + candidate.getName() + " не найден");
             return;
@@ -21,7 +27,7 @@ class CandidateManager {
         System.out.println("Кандидат " + candidate.getName() + " успешно удален");
     }
 
-    Candidate[] candidates() {
+    public Candidate[] candidates() {
         return storage.candidates();
     }
 }

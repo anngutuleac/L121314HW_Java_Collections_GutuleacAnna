@@ -1,8 +1,8 @@
 package VotingSystem;
 
 class VotingSystem {
-    private UserManager userManager = new UserManager();
-    private CandidateManager candidatesManager = new CandidateManager();
+    private UserManagerType userManager = new UserManager();
+    private CandidateManagerType candidatesManager = new CandidateManager();
 
     void add(Candidate candidate) {
         candidatesManager.add(candidate);
@@ -28,6 +28,14 @@ class VotingSystem {
         userManager.delete(user);
     }
 
+    void vote(User user, Candidate candidate) {
+        if (userManager.isAuthorized(user)) {
+            userManager.vote(user, candidate);
+        } else {
+            System.out.println("Пользователь " + user.getUsername() + " не авторизирован для голосования");
+        }
+    }
+
     void printCandidates() {
         for (int i = 0; i < candidatesManager.candidates().length; i++) {
             Candidate candidate = candidatesManager.candidates()[i];
@@ -39,14 +47,6 @@ class VotingSystem {
         for (int i = 0; i < userManager.authorizedUsers().length; i++) {
             User user = userManager.authorizedUsers()[i];
             System.out.println((i + 1) + ". " + user.info());
-        }
-    }
-
-    void vote(User user, Candidate candidate) {
-        if (userManager.isAuthorized(user)) {
-            userManager.vote(user, candidate);
-        } else {
-            System.out.println("Пользователь " + user.getUsername() + " не авторизирован для голосования");
         }
     }
 

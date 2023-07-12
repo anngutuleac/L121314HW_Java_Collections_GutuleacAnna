@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86e58baa-1783-4395-b760-6835f3675bf8" name="Changes" comment="Make lesson 12 13 14 homework">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/CandidateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/CandidateManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystemDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystemDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689183436503</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Make lesson 12 13 14 homework">
+      <created>1689184470315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689184470315</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

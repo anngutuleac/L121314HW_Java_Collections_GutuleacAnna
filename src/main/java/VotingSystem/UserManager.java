@@ -1,10 +1,20 @@
 package VotingSystem;
 
-class UserManager {
+interface UserManagerType {
+    void authorize(User user);
+    void register(User user);
+    void logOut(User user);
+    void delete(User user);
+    void vote(User user, Candidate candidate);
+    User[] authorizedUsers();
+    boolean isAuthorized(User user);
+}
+
+class UserManager implements UserManagerType {
     private UserStorageType storage = new UserStorage();
     private UserStorageType sessionStorage = new UserSessionStorage();
 
-    void authorize(User user) {
+    public void authorize(User user) {
         if (storage.contains(user)) {
             addToSessionStorage(user);
         } else {
@@ -12,7 +22,7 @@ class UserManager {
         }
     }
 
-    void register(User user) {
+    public void register(User user) {
         if (storage.containsByUsername(user)) {
             System.out.println("Пользователь " + user.getUsername() + " уже существует");
             return;
@@ -21,7 +31,7 @@ class UserManager {
         System.out.println("Пользователь " + user.getUsername() + " успешно зарегистрирован");
     }
 
-    void logOut(User user) {
+    public void logOut(User user) {
         if (!sessionStorage.contains(user)) {
             System.out.println("Пользователь " + user.getUsername() + " не авторизирован");
             return;
@@ -30,7 +40,7 @@ class UserManager {
         System.out.println("Пользователь " + user.getUsername() + " вышел из системы");
     }
 
-    void delete(User user) {
+    public void delete(User user) {
         if (!storage.contains(user)) {
             System.out.println("Пользователь " + user.getUsername() + " не существует");
             return;
@@ -40,7 +50,7 @@ class UserManager {
         System.out.println("Пользователь " + user.getUsername() + " удален из системы");
     }
 
-    void vote(User user, Candidate candidate) {
+    public void vote(User user, Candidate candidate) {
         if (candidate == null) { return; }
         if (!sessionStorage.contains(user)) {
             System.out.println("Пользователь " + user.getUsername() + " не авторизирован для голосования");
@@ -54,11 +64,11 @@ class UserManager {
         System.out.println("Пользователь " + user.getUsername() + " проголосовал за " + candidate.getName());
     }
 
-    User[] authorizedUsers() {
+    public User[] authorizedUsers() {
         return sessionStorage.users();
     }
 
-    boolean isAuthorized(User user) {
+    public boolean isAuthorized(User user) {
         return sessionStorage.contains(user);
     }
 
