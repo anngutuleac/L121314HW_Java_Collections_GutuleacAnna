@@ -35,7 +35,7 @@ public class VotingSystemDemo {
         votingSystem.printCandidates();
 
         // Создаем пользователей
-        User user1 = new User("Иван Ургант", "ve4ernii_tak_sebe_iumor");
+        User user1 = new User("Игорь Крутой", "morkovi_pohojaiea_na_slon");
         User user2 = new User("Николай Басков", "spasibo_mame_za_papu");
         User user3 = new User("Земфира", "iskala_tebea_a_nashla_sebea");
         User user4 = new User("Александр Буйнов", "bez_o4kov_prozra4nei_svet");
@@ -50,6 +50,11 @@ public class VotingSystemDemo {
         votingSystem.register(user3);
         votingSystem.register(user4);
         votingSystem.register(user5);
+
+        // Вывод списка авторизированных пользователей
+        System.out.println();
+        System.out.println("===Вывод списка авторизированных пользователей==============");
+        votingSystem.printAuthorizedUsers();
 
         // Попытка зарегистрировать пользователя с тем же именем
         System.out.println();
@@ -87,6 +92,7 @@ public class VotingSystemDemo {
         votingSystem.vote(user2, candidate3);
         votingSystem.vote(user3, candidate2);
         votingSystem.vote(user4, candidate3);
+        votingSystem.vote(user5, candidate2);
 
         // Выход пользователя из системы
         System.out.println();

@@ -51,7 +51,7 @@ class UserManager {
             return;
         }
         user.vote(candidate);
-        System.out.println("Пользователь " + user.getUsername() + " проголосовал за кандидата " + candidate.getName());
+        System.out.println("Пользователь " + user.getUsername() + " проголосовал за " + candidate.getName());
     }
 
     User[] authorizedUsers() {
