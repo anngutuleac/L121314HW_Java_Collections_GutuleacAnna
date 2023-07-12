@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86e58baa-1783-4395-b760-6835f3675bf8" name="Changes" comment="Make lesson 12 13 14 homework">
-      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UnitStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UnitStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserSessionStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserStorage.java" beforeDir="false" />
-    </list>
+    <list default="true" id="86e58baa-1783-4395-b760-6835f3675bf8" name="Changes" comment="Make lesson 12 13 14 homework" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
