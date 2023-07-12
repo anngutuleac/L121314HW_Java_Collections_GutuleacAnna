@@ -61,15 +61,16 @@ class VotingSystem implements VotingSystemType {
         int defaultVoteNumber = 0;
         int maxVoteNumber = defaultVoteNumber;
         int maxVotedCandidateIndex = 0;
-        for (int i = 0; i < candidatesManager.candidates().length; i++) {
-            Candidate candidate = candidatesManager.candidates()[i];
+        Candidate[] candidates = candidatesManager.candidates();
+        for (int i = 0; i < candidates.length; i++) {
+            Candidate candidate = candidates[i];
             if (candidate.getVoteNumber() > maxVoteNumber) {
                 maxVoteNumber = candidate.getVoteNumber();
                 maxVotedCandidateIndex = i;
             }
         }
         if (maxVoteNumber == defaultVoteNumber) { return; }
-        Candidate candidate = candidatesManager.candidates()[maxVotedCandidateIndex];
+        Candidate candidate = candidates[maxVotedCandidateIndex];
         System.out.println("Кандидат с наибольшим количеством голосов: " + candidate.description());
     }
 
