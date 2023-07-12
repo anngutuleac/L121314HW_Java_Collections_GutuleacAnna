@@ -11,8 +11,8 @@ interface UserManagerType {
 }
 
 class UserManager implements UserManagerType {
-    private UserStorageType storage = new UserStorage();
-    private UserStorageType sessionStorage = new UserSessionStorage();
+    private UserStorage storage = new UserStorage();
+    private UserSessionStorage sessionStorage = new UserSessionStorage();
 
     public void authorize(User user) {
         if (storage.contains(user)) {
@@ -23,45 +23,45 @@ class UserManager implements UserManagerType {
     }
 
     public void register(User user) {
-        if (storage.containsByUsername(user)) {
-            System.out.println("Пользователь " + user.getUsername() + " уже существует");
+        if (storage.containsByName(user)) {
+            System.out.println("Пользователь " + user.getName() + " уже существует");
             return;
         }
         storage.add(user);
-        System.out.println("Пользователь " + user.getUsername() + " успешно зарегистрирован");
+        System.out.println("Пользователь " + user.getName() + " успешно зарегистрирован");
     }
 
     public void logOut(User user) {
         if (!sessionStorage.contains(user)) {
-            System.out.println("Пользователь " + user.getUsername() + " не авторизирован");
+            System.out.println("Пользователь " + user.getName() + " не авторизирован");
             return;
         }
         sessionStorage.remove(user);
-        System.out.println("Пользователь " + user.getUsername() + " вышел из системы");
+        System.out.println("Пользователь " + user.getName() + " вышел из системы");
     }
 
     public void delete(User user) {
         if (!storage.contains(user)) {
-            System.out.println("Пользователь " + user.getUsername() + " не существует");
+            System.out.println("Пользователь " + user.getName() + " не существует");
             return;
         }
         logOut(user);
         storage.remove(user);
-        System.out.println("Пользователь " + user.getUsername() + " удален из системы");
+        System.out.println("Пользователь " + user.getName() + " удален из системы");
     }
 
     public void vote(User user, Candidate candidate) {
         if (candidate == null) { return; }
         if (!sessionStorage.contains(user)) {
-            System.out.println("Пользователь " + user.getUsername() + " не авторизирован для голосования");
+            System.out.println("Пользователь " + user.getName() + " не авторизирован для голосования");
             return;
         }
         if (user.hasVoted()) {
-            System.out.println("Пользователь " + user.getUsername() + " уже проголосовал");
+            System.out.println("Пользователь " + user.getName() + " уже проголосовал");
             return;
         }
         user.vote(candidate);
-        System.out.println("Пользователь " + user.getUsername() + " проголосовал за " + candidate.getName());
+        System.out.println("Пользователь " + user.getName() + " проголосовал за " + candidate.getName());
     }
 
     public User[] authorizedUsers() {
@@ -74,10 +74,10 @@ class UserManager implements UserManagerType {
 
     private void addToSessionStorage(User user) {
         if (sessionStorage.contains(user)) {
-            System.out.println("Пользователь " + user.getUsername() + " уже авторизирован");
+            System.out.println("Пользователь " + user.getName() + " уже авторизирован");
             return;
         }
         sessionStorage.add(user);
-        System.out.println("Пользователь " + user.getUsername() + " успешно авторизирован");
+        System.out.println("Пользователь " + user.getName() + " успешно авторизирован");
     }
 }

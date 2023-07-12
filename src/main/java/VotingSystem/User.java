@@ -14,10 +14,6 @@ class User implements UnitType {
         this.password = password;
     }
 
-    String getUsername() {
-        return username;
-    }
-
     void vote(Candidate candidate) {
         selectedCandidate = candidate;
         selectedCandidate.increaseVote();
@@ -25,6 +21,10 @@ class User implements UnitType {
 
     boolean hasVoted() {
         return selectedCandidate != null;
+    }
+
+    public String getName() {
+        return username;
     }
 
     public String description() {

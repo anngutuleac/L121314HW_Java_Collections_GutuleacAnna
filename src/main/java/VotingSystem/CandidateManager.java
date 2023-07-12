@@ -7,7 +7,7 @@ interface CandidateManagerType {
 }
 
 class CandidateManager implements CandidateManagerType {
-    private CandidateStorageType storage = new CandidateStorage();
+    private CandidateStorage storage = new CandidateStorage();
 
     public void add(Candidate candidate) {
         if (storage.contains(candidate)) {

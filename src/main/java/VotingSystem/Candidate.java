@@ -19,20 +19,20 @@ class Candidate implements UnitType {
         this.party = party;
     }
 
-    String getName() {
-        return name;
-    }
-
     int getVoteNumber() {
         return voteNumber;
     }
 
-    public String description() {
-        return name + " - " + party + " (Количество голосов: " + voteNumber + ")";
-    }
-
     void increaseVote() {
         voteNumber++;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String description() {
+        return name + " - " + party + " (Количество голосов: " + voteNumber + ")";
     }
 
     public boolean equals(Object obj) {

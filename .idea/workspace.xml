@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86e58baa-1783-4395-b760-6835f3675bf8" name="Changes" comment="Make lesson 12 13 14 homework">
-      <change afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UnitType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UnitStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/CandidateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/CandidateManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/CandidateStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/CandidateStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/CandidateStorageType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UnitType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UnitType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserSessionStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UserSessionStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/UserStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/UserStorageType.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystemDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VotingSystem/VotingSystemDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -110,6 +114,17 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Make lesson 12 13 14 homework" />

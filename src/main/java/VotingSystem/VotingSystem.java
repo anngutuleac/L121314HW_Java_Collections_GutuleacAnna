@@ -45,7 +45,7 @@ class VotingSystem implements VotingSystemType {
         if (userManager.isAuthorized(user)) {
             userManager.vote(user, candidate);
         } else {
-            System.out.println("Пользователь " + user.getUsername() + " не авторизирован для голосования");
+            System.out.println("Пользователь " + user.getName() + " не авторизирован для голосования");
         }
     }
 
